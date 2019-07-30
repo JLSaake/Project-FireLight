@@ -58,4 +58,14 @@ public class Player : MonoBehaviour
         // Set rotation
         transform.rotation = Quaternion.Euler(0, angle, 0);
     }
+    
+    #region GettersSetters
+
+    // Return player's current position (for external classes)
+    public Vector3 GetPlayerPosition() {
+        return transform.position;
+    }
+
+    #endregion
 }
+
