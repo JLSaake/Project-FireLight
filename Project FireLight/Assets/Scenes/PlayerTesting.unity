@@ -834,6 +834,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectionDistance: 10
+  limitedDetectionDistance: 5
+  forwardDetectionAngle: 45
+  sideDetectionAngle: 90
 --- !u!1 &864550542
 GameObject:
   m_ObjectHideFlags: 0

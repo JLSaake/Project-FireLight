@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         UpdateOverheadCamera();
+        
     }
 
     // Update the position of the overhead camera
