@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     #region Public Variables
     public float speed = 5; // Speed of player
     public Projectile projectile;
+    public Camera cam;
     #endregion
 
 
@@ -45,24 +46,26 @@ public class Player : MonoBehaviour
     // Rotates the player to aim
     void PlayerAim() {
 
-        // Get mouse position from screen to world
-        Vector3 mousePos3D = Camera.main.ScreenToWorldPoint(new Vector3 (Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane));
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
 
-        // Convert player and mouse positions to pseudo 2D
-        Vector3 playerPos = new Vector3(transform.position.x, 0,  transform.position.z);
-        Vector3 mousePos = new Vector3(mousePos3D.x, 0, mousePos3D.z);
+        if (Physics.Raycast(ray, out hit))
+        {
+            Vector3 mousePos = new Vector3(hit.point.x, 0, hit.point.z);
+            Vector3 playerPos = new Vector3(transform.position.x, 0,  transform.position.z);
 
-        // Get direction from player to mouse and angle from forward
-        Vector3 direction = playerPos - mousePos;
-        float angle = Vector3.Angle(Vector3.back, direction);
+            // Get direction from player to mouse and angle from forward
+            Vector3 direction = playerPos - mousePos;
+            float angle = Vector3.Angle(Vector3.back, direction);
 
-        // Handle full rotation
-        if (direction.x > 0) {
-            angle = -angle;
+            // Handle full rotation
+            if (direction.x > 0) {
+                angle = -angle;
+            }
+
+            // Set rotation
+            transform.rotation = Quaternion.Euler(0, angle, 0);
         }
-
-        // Set rotation
-        transform.rotation = Quaternion.Euler(0, angle, 0);
     }
 
     // TODO: Make attack to allow for melee / other attacks
@@ -76,9 +79,9 @@ public class Player : MonoBehaviour
     
     #region Getters and Setters
 
-    // Return player's current position (for external classes)
+    // Return player's current position on the floor {y=0} (for external classes) 
     public Vector3 GetPlayerPosition() {
-        return transform.position;
+        return new Vector3 (transform.position.x, 0, transform.position.z);
     }
 
     #endregion
