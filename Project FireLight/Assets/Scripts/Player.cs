@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    #region PrivateComponents
+    #region Private Components
     private Rigidbody rb; // Rigidbody on player
     #endregion
 
-    #region PublicVariables
+    #region Public Variables
     public float speed = 5; // Speed of player
+    public Projectile projectile;
     #endregion
 
 
@@ -24,8 +25,14 @@ public class Player : MonoBehaviour
     {
         PlayerMove();
         PlayerAim();
+
+        if (Input.GetButtonDown("Fire1")) {
+            Shoot();
+        }
     }
 
+
+    #region Movement and Shooting
     // Handles all directional movement for player
     void PlayerMove() {
         // Get axis inputs
@@ -47,8 +54,7 @@ public class Player : MonoBehaviour
 
         // Get direction from player to mouse and angle from forward
         Vector3 direction = playerPos - mousePos;
-        float angle = Vector3.Angle(Vector3.back, direction); // Back is front for some reason. TODO: keep an eye here
-            // Using constant vector3 opposed to player vector as game will maintain static camera rotation
+        float angle = Vector3.Angle(Vector3.back, direction);
 
         // Handle full rotation
         if (direction.x > 0) {
@@ -58,8 +64,17 @@ public class Player : MonoBehaviour
         // Set rotation
         transform.rotation = Quaternion.Euler(0, angle, 0);
     }
+
+    // TODO: Make attack to allow for melee / other attacks
+    void Shoot() {
+        Projectile newProjectile = Instantiate(projectile);
+        // TODO: give direction and velocity
+        newProjectile.Fire(transform.position, transform.rotation.eulerAngles.y);
+    }
+
+    #endregion
     
-    #region GettersSetters
+    #region Getters and Setters
 
     // Return player's current position (for external classes)
     public Vector3 GetPlayerPosition() {
