@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour
     Rigidbody rb;
     bool isMoving = false;
     public float speed = 10;
+    public float destroyTime = 3;
 
     // Start is called before the first frame update
     void Start()
@@ -26,5 +27,11 @@ public class Projectile : MonoBehaviour
         transform.position = new Vector3(playerPosition.x, 2, playerPosition.z);
         transform.rotation = Quaternion.Euler(new Vector3(0, shotAngle, 0));
         isMoving = true;
+        Destroy(gameObject, destroyTime);
     }
+
+    void OnCollisionEnter(Collision collision) {
+        Destroy(this.gameObject);
+    }
+
 }
