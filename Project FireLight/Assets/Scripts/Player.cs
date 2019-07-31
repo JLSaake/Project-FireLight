@@ -51,8 +51,8 @@ public class Player : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {
-            Vector3 mousePos = new Vector3(hit.point.x, 0, hit.point.z);
-            Vector3 playerPos = new Vector3(transform.position.x, 0,  transform.position.z);
+            Vector3 mousePos = new Vector3(hit.point.x, 1, hit.point.z);
+            Vector3 playerPos = transform.position;
 
             // Get direction from player to mouse and angle from forward
             Vector3 direction = playerPos - mousePos;
@@ -81,7 +81,7 @@ public class Player : MonoBehaviour
 
     // Return player's current position on the floor {y=0} (for external classes) 
     public Vector3 GetPlayerPosition() {
-        return new Vector3 (transform.position.x, 0, transform.position.z);
+        return transform.position;
     }
 
     #endregion
