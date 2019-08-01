@@ -5,9 +5,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
-    Player player;
+    Player player; // Found in Start
     public Camera overheadCam; // TODO: get main camera via script and tags
-    private Vector3 cameraOffset;
+    private Vector3 cameraOffset; // Set at Start, is the offset of the camera from player
 
     // Start is called before the first frame update
     void Start()

@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    Rigidbody rb;
-    bool isMoving = false;
-    public float speed = 10;
-    public float destroyTime = 3;
+    Rigidbody rb; // Projectile's rigidbody (found in Start)
+    bool isMoving = false; // Is this projectile in motion / has been fired
+    public float speed = 10; // Speed of projectile
+    public int damage = 1; // Damage done to enemies
+    public float destroyTime = 3; // Falloff time, after which the projectile is destroyed
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class Projectile : MonoBehaviour
         }
     }
 
+    // Begin the motion of the projectile
     public void Fire(Vector3 playerPosition, float shotAngle)
     {
         transform.position = new Vector3(playerPosition.x, 2, playerPosition.z);
@@ -33,6 +35,11 @@ public class Projectile : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        // When the projectile collides with an enemy, deal it damage. Otherwise destroy
+        if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
+        }
         Destroy(this.gameObject);
     }
 
