@@ -8,6 +8,9 @@ public class Enemy : MonoBehaviour
 
     private NavMeshAgent agent; // NavMesh agent found in Start on Enemy
     private Player player; // TODO: get from gamemanager
+    private bool isFollowingPlayer = false; // If this enemy is currently tracking the player
+    private bool isAttacking = false; // If this enemy is currently making an attack
+    public float attackDistance = 2f;
     public int health = 1; // HP pool. Below 0 = Death
     public float detectionDistance = 10; // Normal distance to detect player directly in front
     public float limitedDetectionDistance = 5; // Shortened distance to detect player in peripherial vision
@@ -28,10 +31,29 @@ public class Enemy : MonoBehaviour
         {
             Die();
         }
-        if (CanSeePlayerInRange())
+        bool seePlayer = CanSeePlayerInRange();
+        if (!isAttacking && seePlayer) // Design question: Do we store player's last known position while attacking?
         {
             agent.SetDestination(player.GetPlayerPosition());
+            isFollowingPlayer = true;
+            
+
+            if (Vector3.Distance(agent.destination, agent.transform.position) <= attackDistance && isFollowingPlayer) {
+                agent.SetDestination(agent.transform.position);
+                isAttacking = true;
+                StartCoroutine("Attack");
+            }
+        } else
+        if (!seePlayer && isFollowingPlayer && !isAttacking)
+        {
+            if (agent.remainingDistance <= 1) // close enough to point
+            {
+                isFollowingPlayer = false;
+                // TODO add stationary check and sentry mode return
+                agent.SetDestination(agent.transform.position);
+            }
         }
+
     }
 
     // Checks to see if the player can be seen, and is range based on sight angles
@@ -74,6 +96,13 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    IEnumerator Attack() {
+        yield return new WaitForSeconds(2); // TODO: Remove, as this is temporary to get funciton working
+        // Add attack animation / damage / effects here
+        isAttacking = false;
+
+    }
+
     // Death sequence (Destorys gameobject at end)
     void Die()
     {
@@ -85,13 +114,14 @@ public class Enemy : MonoBehaviour
         // Debug vision angles
         Gizmos.color = Color.red;
         Vector3 direction = Quaternion.Euler(0, forwardDetectionAngle, 0) * transform.forward * detectionDistance;
-        Gizmos.DrawRay(transform.position, direction);
+        Vector3 bodyPos = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+        Gizmos.DrawRay(bodyPos, direction);
         direction = Quaternion.Euler(0, -forwardDetectionAngle, 0) * transform.forward * detectionDistance;
-        Gizmos.DrawRay(transform.position, direction);
+        Gizmos.DrawRay(bodyPos, direction);
 
         direction = Quaternion.Euler(0, sideDetectionAngle, 0) * transform.forward * limitedDetectionDistance;
-        Gizmos.DrawRay(transform.position, direction);
+        Gizmos.DrawRay(bodyPos, direction);
         direction = Quaternion.Euler(0, -sideDetectionAngle, 0) * transform.forward * limitedDetectionDistance;
-        Gizmos.DrawRay(transform.position, direction);
+        Gizmos.DrawRay(bodyPos, direction);
     }
 }

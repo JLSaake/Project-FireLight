@@ -63,7 +63,7 @@ public class Player : MonoBehaviour
             if (direction.x > 0) {
                 angle = -angle;
             }
-            
+
             // Set rotation
             transform.rotation = Quaternion.Euler(0, angle, 0);
         }
@@ -93,7 +93,7 @@ public class Player : MonoBehaviour
     {
         Gizmos.color = Color.green;
         Vector3 direction = Quaternion.Euler(0,0,0) * transform.forward * 5;
-        Gizmos.DrawRay(transform.position, direction);
+        Gizmos.DrawRay(new Vector3(transform.position.x, transform.position.y + 1, transform.transform.position.z), direction);
     }
 }
 
