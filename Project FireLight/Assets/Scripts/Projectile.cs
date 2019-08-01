@@ -23,14 +23,16 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    public void Fire(Vector3 playerPosition, float shotAngle) {
+    public void Fire(Vector3 playerPosition, float shotAngle)
+    {
         transform.position = new Vector3(playerPosition.x, 2, playerPosition.z);
         transform.rotation = Quaternion.Euler(new Vector3(0, shotAngle, 0));
         isMoving = true;
         Destroy(gameObject, destroyTime);
     }
 
-    void OnCollisionEnter(Collision collision) {
+    void OnCollisionEnter(Collision collision)
+    {
         Destroy(this.gameObject);
     }
 

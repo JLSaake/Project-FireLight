@@ -29,14 +29,14 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    bool CanSeePlayerInRange() {
+    bool CanSeePlayerInRange()
+    {
         Vector3 playerPos = player.GetPlayerPosition();
         RaycastHit hit;
         Vector3 direction = transform.position - playerPos; 
         float currentDetection = detectionDistance;
         float angle = Vector3.Angle(transform.forward * -1, direction);
 
-        Debug.Log(Mathf.Round(Vector3.Distance(playerPos, transform.position)));
         
         if (angle > sideDetectionAngle) {
             return false;
@@ -56,5 +56,19 @@ public class Enemy : MonoBehaviour
             }
         }
         return false;
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Vector3 direction = Quaternion.Euler(0, forwardDetectionAngle, 0) * transform.forward * detectionDistance;
+        Gizmos.DrawRay(transform.position, direction);
+        direction = Quaternion.Euler(0, -forwardDetectionAngle, 0) * transform.forward * detectionDistance;
+        Gizmos.DrawRay(transform.position, direction);
+
+        direction = Quaternion.Euler(0, sideDetectionAngle, 0) * transform.forward * limitedDetectionDistance;
+        Gizmos.DrawRay(transform.position, direction);
+        direction = Quaternion.Euler(0, -sideDetectionAngle, 0) * transform.forward * limitedDetectionDistance;
+        Gizmos.DrawRay(transform.position, direction);
     }
 }

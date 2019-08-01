@@ -22,11 +22,12 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         UpdateOverheadCamera();
-        
+
     }
 
     // Update the position of the overhead camera
-    void UpdateOverheadCamera() {
+    void UpdateOverheadCamera()
+    {
         Vector3 playerPos = player.GetPlayerPosition();
         overheadCam.transform.position = new Vector3(playerPos.x + cameraOffset.x, cameraOffset.y, playerPos.z + cameraOffset.z);
         //TODO: work in edge of room cases to keep gameplay on screen

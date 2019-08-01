@@ -35,7 +35,8 @@ public class Player : MonoBehaviour
 
     #region Movement and Shooting
     // Handles all directional movement for player
-    void PlayerMove() {
+    void PlayerMove()
+    {
         // Get axis inputs
         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
@@ -44,32 +45,33 @@ public class Player : MonoBehaviour
     }
 
     // Rotates the player to aim
-    void PlayerAim() {
+    void PlayerAim()
+    {
 
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit))
         {
-            Vector3 mousePos = new Vector3(hit.point.x, 1, hit.point.z);
-            Vector3 playerPos = transform.position;
+            Vector3 mousePos = new Vector3(hit.point.x, transform.position.y, hit.point.z);
 
             // Get direction from player to mouse and angle from forward
-            Vector3 direction = playerPos - mousePos;
+            Vector3 direction = transform.position - mousePos;
             float angle = Vector3.Angle(Vector3.back, direction);
 
             // Handle full rotation
             if (direction.x > 0) {
                 angle = -angle;
             }
-
+            
             // Set rotation
             transform.rotation = Quaternion.Euler(0, angle, 0);
         }
     }
 
     // TODO: Make attack to allow for melee / other attacks
-    void Shoot() {
+    void Shoot()
+    {
         Projectile newProjectile = Instantiate(projectile);
         // TODO: give direction and velocity
         newProjectile.Fire(transform.position, transform.rotation.eulerAngles.y);
@@ -80,10 +82,18 @@ public class Player : MonoBehaviour
     #region Getters and Setters
 
     // Return player's current position on the floor {y=0} (for external classes) 
-    public Vector3 GetPlayerPosition() {
+    public Vector3 GetPlayerPosition()
+    {
         return transform.position;
     }
 
     #endregion
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        Vector3 direction = Quaternion.Euler(0,0,0) * transform.forward * 5;
+        Gizmos.DrawRay(transform.position, direction);
+    }
 }
 
