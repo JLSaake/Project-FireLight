@@ -20,16 +20,23 @@ public class Enemy : MonoBehaviour
     public float limitedDetectionDistance = 5; // Shortened distance to detect player in peripherial vision
     public float forwardDetectionAngle = 45; // Angle from forward at which normal detection distance applies
     public float sideDetectionAngle = 90; // Angle from forward at which shortened detection distance applies
+    public SentryNode[] nodeArray; // Array of points to sentry through. If empty, stationary enemy should return to post (SHOULD NEVER BE LENGTH 1)
+    private bool atSentryNode = false;
+    private int nodeIndex = 0;
     #endregion
 
-    private Vector3 startPos;
+    private Transform startPos;
 
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindObjectOfType<Player>();
-        startPos = agent.transform.position;
+        startPos = agent.transform;
+        if (nodeArray.Length > 1)
+        {
+            agent.SetDestination(nodeArray[nodeIndex].transform.position);
+        }
     }
 
     // Update is called once per frame
@@ -47,6 +54,7 @@ public class Enemy : MonoBehaviour
 
         if (seePlayer && !isAttacking) // Design question: Do we store player's last known position while attacking?
         {
+            atSentryNode = false;
             isStationary = false;
             isStationaryCounting = false;
             agent.SetDestination(player.GetPlayerPosition());
@@ -61,15 +69,43 @@ public class Enemy : MonoBehaviour
         } else
         if (!seePlayer && isStationary && isFollowingPlayer) {
             if (isStationaryCounting) { // If stationary timer is running
-                if ((Time.time - stationaryTimeStart) >= stationaryTimeLimit) { // If the stationary time is over the limit
+                if ((Time.time - stationaryTimeStart) >= stationaryTimeLimit) // If the stationary time is over the limit
+                {
                     isFollowingPlayer = false;
-                    // TODO: return to nearest sentry point
-                    agent.SetDestination(startPos); // Temporary: return to starting location
+                    if (nodeArray.Length > 1) { // If sentry enemy
+                        agent.SetDestination(nodeArray[nodeIndex].transform.position);
+                    } else // If normally stationary enemy
+                    {
+                        agent.SetDestination(startPos.position); // TODO: lerp rotation back to starting
+                    }
                 }
             } else { // Start timer stationary timer
                 isStationaryCounting = true;
                 stationaryTimeStart = Time.time;
             }
+        } else
+        if (!seePlayer && !isFollowingPlayer && (nodeArray.Length > 1)) // If in sentry mode and not stationary enemy
+        {
+            if (atSentryNode) // At the next sentry node in array
+            {
+                if (Time.time - stationaryTimeStart >= nodeArray[nodeIndex].stationaryTimeLimit)
+                {
+                    atSentryNode = false;
+                    ++nodeIndex;
+                    if (nodeIndex >= nodeArray.Length) // Loop back to front of node array
+                    {
+                        nodeIndex = 0;
+                    }
+                    agent.SetDestination(nodeArray[nodeIndex].transform.position);
+                }
+            } else 
+            {
+                if (StationaryCheck())
+                {
+                    atSentryNode = true;
+                    stationaryTimeStart = Time.time;
+                }
+            } 
         }
         Debug.Log(stationaryTimeStart);
     }
