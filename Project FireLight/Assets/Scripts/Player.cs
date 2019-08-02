@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
 
     #region Public Variables
     public float speed = 5; // Speed of player
+    public int health = 10; // Health of player
+    public int healthMax = 10;
     public Projectile projectile;
     public Camera cam;
     #endregion
@@ -75,6 +77,31 @@ public class Player : MonoBehaviour
         Projectile newProjectile = Instantiate(projectile);
         // TODO: give direction and velocity
         newProjectile.Fire(transform.position, transform.rotation.eulerAngles.y);
+    }
+
+    // Player loses health
+    public void TakeDamage(int Damage)
+    {
+        health -= Damage;
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    // Player gains health
+    public void Heal(int heal)
+    {
+        health += heal;
+        if (health > healthMax)
+        {
+            health = healthMax;
+        }
+    }
+
+    void Die()
+    {
+        // TODO: add end of game scenes
     }
 
     #endregion

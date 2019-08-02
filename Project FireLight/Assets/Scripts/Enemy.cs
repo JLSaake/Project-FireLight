@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     public float stationaryTimeLimit = 2; // Amount of time this enemy should remain stationary after losing sight of player
     public float attackDistance = 2f;
     public int health = 1; // HP pool. Below 0 = Death
+    public int damage = 1; // Amount of damage done in each attack
     public float detectionDistance = 10; // Normal distance to detect player directly in front
     public float limitedDetectionDistance = 5; // Shortened distance to detect player in peripherial vision
     public float forwardDetectionAngle = 45; // Angle from forward at which normal detection distance applies
@@ -107,7 +108,6 @@ public class Enemy : MonoBehaviour
                 }
             } 
         }
-        Debug.Log(stationaryTimeStart);
     }
 
     // Checks to see if the player can be seen, and is range based on sight angles
@@ -150,11 +150,15 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    bool StationaryCheck() {
+    bool StationaryCheck() 
+    {
       return Vector3.Distance(agent.transform.position, agent.destination) <= .1; // TODO: Add stationary tolerance variable
     }
 
-    IEnumerator Attack() {
+    IEnumerator Attack() 
+    {
+        // TODO: change to animation where damage is done via trigger (swing, explosion, etc)
+        player.TakeDamage(damage);
         yield return new WaitForSeconds(2); // TODO: Remove, as this is temporary to get funciton working
         // Add attack animation / damage / effects here
         isAttacking = false;
