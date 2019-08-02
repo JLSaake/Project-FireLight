@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         player = GameObject.FindObjectOfType<Player>();
-        player.cam = overheadCam;
+        player.SetCam(overheadCam);
         Vector3 playerPos = player.GetPlayerPosition();
         cameraOffset = overheadCam.transform.position - playerPos;
     }

@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     public int health = 10; // Health of player
     public int healthMax = 10;
     public Projectile projectile;
-    public Camera cam;
+    private Camera overheadCam; // Set in GameManager
     #endregion
 
 
@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
     void PlayerAim()
     {
 
-        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        Ray ray = overheadCam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit))
@@ -112,6 +112,11 @@ public class Player : MonoBehaviour
     public Vector3 GetPlayerPosition()
     {
         return transform.position;
+    }
+
+    public void SetCam(Camera cam)
+    {
+        overheadCam = cam;
     }
 
     #endregion
