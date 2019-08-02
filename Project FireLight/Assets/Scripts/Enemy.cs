@@ -37,6 +37,8 @@ public class Enemy : MonoBehaviour
         if (nodeArray.Length > 1)
         {
             agent.SetDestination(nodeArray[nodeIndex].transform.position);
+        } else {
+            agent.SetDestination(startPos.position);
         }
     }
 

@@ -132,11 +132,7 @@ MonoBehaviour:
   limitedDetectionDistance: 5
   forwardDetectionAngle: 45
   sideDetectionAngle: 90
-  nodeArray:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  nodeArray: []
 --- !u!195 &4056877422777068341
 NavMeshAgent:
   m_ObjectHideFlags: 0
