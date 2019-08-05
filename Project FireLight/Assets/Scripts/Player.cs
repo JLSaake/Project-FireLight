@@ -6,14 +6,18 @@ public class Player : MonoBehaviour
 {
     #region Private Components
     private Rigidbody rb; // Rigidbody on player
+    private Camera overheadCam; // Set in GameManager
+    private BoxCollider meleeCollider;
+
     #endregion
 
     #region Public Variables
     public float speed = 5; // Speed of player
     public int health = 10; // Health of player
     public int healthMax = 10;
+    public float MeleeTime = 0.5f;
     public Projectile projectile;
-    private Camera overheadCam; // Set in GameManager
+    public int meleeDamage = 1;
     #endregion
 
 
@@ -21,6 +25,8 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
+        meleeCollider = GetComponent<BoxCollider>();
+        meleeCollider.enabled = false;
     }
 
     // Update is called once per frame
@@ -29,8 +35,13 @@ public class Player : MonoBehaviour
         PlayerMove();
         PlayerAim();
 
-        if (Input.GetButtonDown("Fire1")) {
+        if (Input.GetButtonDown("Fire1"))
+        {
             Shoot();
+        }
+        if (Input.GetButtonDown("Fire2"))
+        {
+            Melee();
         }
     }
 
@@ -78,6 +89,29 @@ public class Player : MonoBehaviour
         // TODO: give direction and velocity
         newProjectile.Fire(transform.position, transform.rotation.eulerAngles.y);
     }
+
+
+    void Melee()
+    {
+        // sword.Swing();
+        meleeCollider.enabled = true;
+        StartCoroutine("MeleeTimer");
+    }
+
+    IEnumerator MeleeTimer()
+    {
+        yield return new WaitForSeconds(MeleeTime);
+        meleeCollider.enabled = false;
+    }
+
+    void OnTriggerEnter(Collider collider)
+    {
+        if (collider.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            collider.gameObject.GetComponent<Enemy>().TakeDamage(meleeDamage);
+        }
+    }
+
 
     // Player loses health
     public void TakeDamage(int Damage)

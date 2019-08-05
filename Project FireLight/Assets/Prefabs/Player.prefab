@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 500917576330544207}
   - component: {fileID: 500917576330544204}
   - component: {fileID: 500917576330544200}
+  - component: {fileID: 1743077330}
   - component: {fileID: 500917576330544205}
   m_Layer: 8
   m_Name: Player
@@ -127,8 +128,10 @@ MonoBehaviour:
   speed: 5
   health: 10
   healthMax: 10
+  MeleeTime: 0.5
   projectile: {fileID: 1819484513426540972, guid: c8e77e3a7adb77442a245306c3d4c989,
     type: 3}
+  meleeDamage: 1
 --- !u!136 &500917576330544200
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -143,6 +146,19 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!65 &1743077330
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 500917576330544203}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 1.8, z: 2}
+  m_Center: {x: 0, y: 1, z: 1}
 --- !u!54 &500917576330544205
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -1700,22 +1700,22 @@ PrefabInstance:
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: detectionDistance
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: limitedDetectionDistance
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: forwardDetectionAngle
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: sideDetectionAngle
-      value: 75
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
@@ -6107,22 +6107,22 @@ PrefabInstance:
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: detectionDistance
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: limitedDetectionDistance
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: forwardDetectionAngle
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: sideDetectionAngle
-      value: 75
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
@@ -8101,22 +8101,22 @@ PrefabInstance:
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: detectionDistance
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: limitedDetectionDistance
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: forwardDetectionAngle
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: sideDetectionAngle
-      value: 75
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
@@ -8995,22 +8995,22 @@ PrefabInstance:
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: detectionDistance
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: limitedDetectionDistance
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: forwardDetectionAngle
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: sideDetectionAngle
-      value: 75
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
@@ -10037,22 +10037,22 @@ PrefabInstance:
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: detectionDistance
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: limitedDetectionDistance
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: forwardDetectionAngle
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: sideDetectionAngle
-      value: 75
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
@@ -16643,22 +16643,22 @@ PrefabInstance:
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: detectionDistance
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: limitedDetectionDistance
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: forwardDetectionAngle
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: sideDetectionAngle
-      value: 75
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
@@ -17053,10 +17053,10 @@ MonoBehaviour:
   attackDistance: 2
   health: 1
   damage: 1
-  detectionDistance: 8
-  limitedDetectionDistance: 4
-  forwardDetectionAngle: 25
-  sideDetectionAngle: 75
+  detectionDistance: 9
+  limitedDetectionDistance: 5
+  forwardDetectionAngle: 30
+  sideDetectionAngle: 90
   nodeArray:
   - {fileID: 963686998}
   - {fileID: 1983375378}
@@ -17326,22 +17326,22 @@ PrefabInstance:
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: forwardDetectionAngle
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: detectionDistance
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: limitedDetectionDistance
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: sideDetectionAngle
-      value: 75
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
@@ -19790,22 +19790,22 @@ PrefabInstance:
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: detectionDistance
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: limitedDetectionDistance
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: forwardDetectionAngle
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: sideDetectionAngle
-      value: 75
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
@@ -22294,22 +22294,22 @@ PrefabInstance:
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: detectionDistance
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: limitedDetectionDistance
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: forwardDetectionAngle
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: sideDetectionAngle
-      value: 75
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
@@ -25468,22 +25468,22 @@ PrefabInstance:
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: detectionDistance
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: limitedDetectionDistance
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: forwardDetectionAngle
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: sideDetectionAngle
-      value: 75
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
@@ -33455,22 +33455,22 @@ PrefabInstance:
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: detectionDistance
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: limitedDetectionDistance
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: forwardDetectionAngle
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: sideDetectionAngle
-      value: 75
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
@@ -36979,22 +36979,22 @@ PrefabInstance:
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: detectionDistance
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: limitedDetectionDistance
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: forwardDetectionAngle
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: sideDetectionAngle
-      value: 75
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
@@ -37732,22 +37732,22 @@ PrefabInstance:
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: detectionDistance
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: limitedDetectionDistance
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: forwardDetectionAngle
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: sideDetectionAngle
-      value: 75
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
@@ -42325,22 +42325,22 @@ PrefabInstance:
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: detectionDistance
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: limitedDetectionDistance
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: forwardDetectionAngle
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: sideDetectionAngle
-      value: 75
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
@@ -43611,22 +43611,22 @@ PrefabInstance:
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: detectionDistance
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: limitedDetectionDistance
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: forwardDetectionAngle
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: sideDetectionAngle
-      value: 75
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
@@ -43736,22 +43736,22 @@ PrefabInstance:
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: detectionDistance
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: limitedDetectionDistance
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: forwardDetectionAngle
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: sideDetectionAngle
-      value: 75
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
@@ -53881,22 +53881,22 @@ PrefabInstance:
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: detectionDistance
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: limitedDetectionDistance
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: forwardDetectionAngle
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: sideDetectionAngle
-      value: 75
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
@@ -56466,22 +56466,22 @@ PrefabInstance:
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: detectionDistance
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: limitedDetectionDistance
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: forwardDetectionAngle
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: sideDetectionAngle
-      value: 75
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
@@ -59791,22 +59791,22 @@ PrefabInstance:
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: detectionDistance
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: limitedDetectionDistance
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: forwardDetectionAngle
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
       propertyPath: sideDetectionAngle
-      value: 75
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4056877422777068338, guid: 6a534063948675940be34bdd63925d3c,
         type: 3}
