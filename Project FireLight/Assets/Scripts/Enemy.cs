@@ -24,6 +24,8 @@ public class Enemy : MonoBehaviour
     public SentryNode[] nodeArray; // Array of points to sentry through. If empty, stationary enemy should return to post (SHOULD NEVER BE LENGTH 1)
     private bool atSentryNode = false;
     private int nodeIndex = 0;
+
+    private float currentMainDetectionAngle;
     #endregion
 
     private Transform startPos;
@@ -31,6 +33,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currentMainDetectionAngle = forwardDetectionAngle;
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindObjectOfType<Player>();
         startPos = agent.transform;
@@ -50,6 +53,13 @@ public class Enemy : MonoBehaviour
             Die();
         }
         bool seePlayer = CanSeePlayerInRange();
+        if (seePlayer)
+        {
+            currentMainDetectionAngle = sideDetectionAngle;
+        }
+
+        Debug.Log(seePlayer + " / " + agent.destination);
+
         
         if (!isAttacking && isFollowingPlayer) {
             isStationary = StationaryCheck();
@@ -70,11 +80,13 @@ public class Enemy : MonoBehaviour
                 StartCoroutine("Attack");
             }
         } else
-        if (!seePlayer && isStationary && isFollowingPlayer) {
+        if (!seePlayer && isStationary && isFollowingPlayer) 
+        {
             if (isStationaryCounting) { // If stationary timer is running
                 if ((Time.time - stationaryTimeStart) >= stationaryTimeLimit) // If the stationary time is over the limit
                 {
                     isFollowingPlayer = false;
+                    currentMainDetectionAngle = forwardDetectionAngle;
                     if (nodeArray.Length > 1) { // If sentry enemy
                         agent.SetDestination(nodeArray[nodeIndex].transform.position);
                     } else // If normally stationary enemy
@@ -125,7 +137,7 @@ public class Enemy : MonoBehaviour
         if (angle > sideDetectionAngle) {
             return false;
         } else
-        if (angle > forwardDetectionAngle && angle <= sideDetectionAngle)
+        if (angle > forwardDetectionAngle && angle <= sideDetectionAngle && currentMainDetectionAngle != sideDetectionAngle)
         {
             currentDetection = limitedDetectionDistance;
         }
@@ -133,12 +145,17 @@ public class Enemy : MonoBehaviour
         // Player is within vision angles, check to see if they are within range
         if (Vector3.Distance(playerPos, transform.position) <= currentDetection)
         {
-            if (Physics.Raycast(transform.position, playerPos-transform.position, out hit, currentDetection))
+            return true;
+
+            /*
+            if (Physics.Linecast(transform.position, playerPos, out hit))
             {
-                if (hit.transform == player.transform) {
+                Debug.Log(hit.transform.gameObject.layer);
+                if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Player")) {
                     return true;
                 }
             }
+            */
         }
         return false;
     }

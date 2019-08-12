@@ -116,6 +116,7 @@ public class Player : MonoBehaviour
     // Player loses health
     public void TakeDamage(int Damage)
     {
+        Debug.Log("Player Taking Damage");
         health -= Damage;
         if (health <= 0)
         {
